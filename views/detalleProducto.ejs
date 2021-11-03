@@ -1,0 +1,38 @@
+<%- include('./partials/head') %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<div class="products-wrapper">
+  <div class="product-detail">
+    <div>
+      <img src="/images/<%=products.image%>" alt="product image" class="product-detail-img">
+      <h2 class="product-detail-description">Título: <%=products.name%></h2>
+      <h3 class="product-detail-description">Autor: <%=products.autor%></h3>
+      <h4 class="product-detail-title">Sinopsis: <%=products.description%></h4>
+    </div>
+    <article class="product-detail-info">
+
+      <p class="product-detail-price small">Precio:
+        <span>$<%=products.price%></span>
+      </p>
+      <ul class="actions-list">
+        <li>
+          <i class="fas fa-credit-card"></i>
+          <p>Pagá en 12 cuotas sin interes</p>
+        </li>
+        <li>
+          <i class="fas fa-store"></i>
+          <p>Retiro gratis en locales del vendedor</p>
+        </li>
+      </ul>
+      <a href="#carrito" class="comprar">COMPRAR</a>
+      <!-- <a href="/products/edit/¿?" class="action-button edit">EDITAR PRODUCTO</a> -->
+      <!-- <form action="/products/delete/¿¿" method="POST" style="display: inline-flex">
+                <button type="submit" class="action-button delete">ELIMINAR</button>
+            </form> -->
+    </article>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,93 @@
+<%- include('./partials/head') %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<main class="main-shop">
+
+    <h3>Tu pedido</h3>
+    <div class="detalle-bloque">
+        <table class="detalleCarrito" rules="rows"> 
+            <thead>
+                <tr>
+                    <th colspan="2" style="height: 30px;">Producto</th>
+                    <th>Precio Unitario</th>
+                    <th>Cantidad</th>
+                    <th>SubTotal</th>  
+                    <th>Eliminar</th>
+                </tr>
+           </thead>
+           <tbody>
+                
+                <tr>
+                    <td><img src="/images/<%=products[0].image%>" alt="titulo"></td>
+                    <td style="text-align: left;padding-left: 5px; width: 120px; font-size: 13px;"><%=products[0].name%>
+                    <br>
+                    <br>
+                    <%=products[0].autor%>
+                    </td>
+                    <td>$ <%=products[0].price%></td>
+                    <td><input type="number" placeholder="1"></td>
+                    <td>$ <%=products[0].price%></td>
+                    <td><a href="#borrar"><i class="fas fa-trash-alt" style="color: red; font-size: 15px;"></i></a></td>
+                </tr>
+                
+            </tbody>
+            <!-- <tfoot>
+                <tr style="display: flex; justify-content: space-between; margin: 5px auto;">
+                    <td><a href="#"><button>Seguir Comprando</button></a></td>
+                    <td><a href="#"><button>Actualizar</button></a></td>
+                    <td style=""><a href="#"><button>Eliminar Todo</button></a></td>
+                </tr>
+            </tfoot> -->
+
+
+        </table>
+
+        <div class="table-foot">
+            <a href="#libros"><button>Agregar Otro</button></a>
+            <a href="#actualizar"><button>Actualizar</button></a>
+            <a href="#delete"><button>Eliminar Todo</button></a>
+        </div>
+    </div>
+    <div class="otros">
+        <div class="dto-env">
+            <div class="descuento">
+                <label for="">Descuento</label>
+                <br>
+                <input type="text" placeholder="cupón">
+                <br>
+                <a href="#aplicar"><button>Aplicar</button></a>
+            </div>
+            <form action="#envio" class="envio">
+            
+                <label for="pais">Calcular Envío</label>
+                <br>
+                <select name="pais" id="pais">
+                    <option value="0">Elija País</option>
+                    <option value="1">Argentina</option>
+                    <option value="2">Uruguay</option>
+                    <option value="3">Chile</option>
+                    <option value="4">Brasil</option>
+                </select>
+                <input type="text" placeholder="Código Postal">
+                <br>
+                <a href="#calcular"><button>Calcular</button></a>
+            
+            </form>
+        </div>
+        <div class="detalleCompra">
+            <label for="">Detalle de Pago</label>
+            <input type="text" placeholder="Subtotal">
+            <input type="text" placeholder="Descuento">
+            <input type="text" placeholder="Envio">
+            <input type="text" placeholder="Total">
+            <br><br>
+            <form action="confirmar" method="post">
+                <button type="submit">Confirmar</button>
+            </form>
+        </div>
+    </div>
+</main>
+
+<%- include('./partials/footer') %>

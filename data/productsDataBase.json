@@ -1,0 +1,106 @@
+[
+    {
+        "id": 1,
+        "name": "El funcionamiento general del mundo",
+        "autor": "Eduardo Sacheri",
+        "price": 570,
+        "category": "novela",
+        "description": "Conociendo el nuevo mundo",
+        "image": "mundo.jpg",
+        "novedad": true,
+        "ventas": 50
+    },
+    {
+        "id": 2,
+        "name": "La pastelería sin secretos",
+        "autor": "Osvaldo Gross",
+        "price": 1230,
+        "category": "cocina",
+        "description": "pastelitos",
+        "image": "pasteleria.jpg",
+        "novedad": true,
+        "ventas": 50
+    },    
+    {
+        "id": 3,
+        "name": "Las Señoritas",
+        "autor": "Laura Ramos",
+        "price": 340,
+        "category": "novela",
+        "description": "señoritas itas",
+        "image": "senoritas.jpg",
+        "novedad": true,
+        "ventas": 50
+    },    
+    {
+        "id": 4,
+        "name": "Sira",
+        "autor": "María Dueñas",
+        "price": 150,
+        "category": "novela",
+        "description": "oh sira sira",
+        "image": "sira.jpg",
+        "novedad": true,
+        "ventas": 50
+    },    
+    {
+        "id": 5,
+        "name": "Las Señoritas",
+        "autor": "María Dueñas",
+        "price": 150,
+        "category": "novela",
+        "description": "oh sira sira",
+        "image": "sira.jpg",
+        "novedad": false,
+        "ventas": 50
+    },    
+    {
+        "id": 6,
+        "name": "La tía Cósima",
+        "autor": "Florencia Bonelli",
+        "price": 150,
+        "category": "novela",
+        "description": "oh tía",
+        "image": "tia.jpg",
+        "novedad": false,
+        "ventas": 100
+    }
+    ,    
+    {
+        "id": 7,
+        "name": "The Secret Garden",
+        "autor": "Hodgson Burnett",
+        "price": 150,
+        "category": "novela",
+        "description": "oh garden",
+        "image": "thesecretgarden.jpeg",
+        "novedad": false,
+        "ventas": 100
+    }
+    ,    
+    {
+        "id": 8,
+        "name": "Gatsby",
+        "autor": "F. Scott Fitzgerald",
+        "price": 150,
+        "category": "novela",
+        "description": "oh gatsby",
+        "image": "gatsby.png",
+        "novedad": false,
+        "ventas": 100
+    }
+    ,    
+    {
+        "id": 9,
+        "name": "The Year After You",
+        "autor": "Nina de Pass",
+        "price": 150,
+        "category": "novela",
+        "description": "oh nina",
+        "image": "after.jpeg",
+        "novedad": false,
+        "ventas": 100
+    }
+
+
+]

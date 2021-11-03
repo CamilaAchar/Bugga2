@@ -1,0 +1,61 @@
+
+<%- include('./partials/head') %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+    <main>
+
+      <div class="banner">
+        <img src="/images/category-books-banner_1920x550_210401.jpeg" alt="banner">
+      </div>
+      <p>Novedades de la Semana</p>
+      <section>
+
+        <% for (let i=0; i<4; i++) { %>
+        <article>
+          <img src="/images/<%=novedad[i].image%>" alt="mundo">
+          <div class="articulo">
+            <div class="autor-favorito">
+              <h3><%=novedad[i].name%></h3>
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="precio-descuento">
+              <p class="precio">$<%=novedad[i].price%>
+                <a href="/products/<%=novedad[i].id%>"><i class="fas fa-info-circle info"></i></a>
+              </p>
+              <a href="#agregar" class="comprar">Agregar</a>
+              <a href="/products/edit/<%=masElegidos[i].id%>" class="comprar">Editar</a>
+            </div>
+          </div>
+        </article>
+        <% } %>
+
+
+      </section>
+      <p>¡Los más elegidos en Bugga!</p>
+
+      <section>
+        <% for (let i=0; i<4; i++) { %>
+        <article>
+          <img src="/images/<%=masElegidos[i].image%>" alt="mundo">
+          <div class="articulo">
+            <div class="autor-favorito">
+              <h3><%=masElegidos[i].name%></h3>
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="precio-descuento">
+              <p class="precio">$<%=masElegidos[i].price%>
+                <a href="/products/<%=masElegidos[i].id%>"><i class="fas fa-info-circle info"></i></a>
+              </p>
+              <a href="#agregar" class="comprar">Agregar</a>
+              <a href="/products/edit/<%=masElegidos[i].id%>" class="comprar">Editar</a>
+            </div>
+          </div>
+        </article>
+        <% } %>
+
+
+      </section>
+    </main>
+<%- include('./partials/footer') %>

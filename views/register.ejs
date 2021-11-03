@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+<body>
+    <%- include('./partials/headerNavbar') %>
+
+    <section class="formulario-registro">
+       
+        <div class="banner">
+            <img src="/images/category-books-banner_1920x550_210401.jpeg" alt="banner">
+        </div>
+
+
+        <form action="/register.html" method="POST" class="form">
+            <h3>Registro de Usuario</h3>
+            <div class="nombre">
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido" required minlength="2">
+            </div>
+            <div class="user">
+                <input type="user" id="user" placeholder="Nombre de Usuario" name="user" required minlength="2">
+            </div>
+            <div class="mail-registro">
+                <input type="email" id="mail" placeholder="E-mail" name="mail" required minlength="2">
+            </div>   
+            <div class="nacimiento">
+                <label for="nacimiento">Fecha de Nacimiento</label>
+                <input type="date" id="nacimiento" name="nacimiento" required>
+            </div>
+            <div class="domicilio">
+                <input type="text" id="domicilio" placeholder="Domicilio" name="domicilio" placeholder="opcional">
+            </div>
+
+            <div class="intereses">
+                <h4>Intereses</h4>
+                <div class="checks">
+                    <input type="checkbox" name="ficcion" value="ficcion">
+                    <label for="ficcion">Ciencia Ficción</label>
+                </div>
+                <div class="checks">
+                    <input type="checkbox" name="aventuras" value="aventuras" >
+                    <label for="aventuras">Aventuras</label>
+                </div>
+                <div class="checks">
+                    <input type="checkbox" name="romance" value="romance">
+                    <label for="romance">Romance</label>
+                </div>    
+                <div class="checks">
+                    <input type="checkbox" name="investigacion" value="investigacion">
+                    <label for="investigacion">Investigación</label>
+                </div>    
+                <div class="checks">
+                    <input type="checkbox" name="universitarios" value="universitarios">
+                    <label for="universitarios">Universitarios</label>
+                </div>
+            </div>
+
+            <div class="foto">
+                <label for="foto">Foto</label>
+                <input type="file" id="foto" name="foto" accept=".jpg">
+            </div>
+
+            <div class="passR">
+                <input type="password" id="pass" name="pass" required minlength="6" placeholder="Contraseña">
+                <input type="password" id="pass2" name="pass2" required minlength="6" placeholder="Confirmar Contraseña">
+            </div>
+
+            <div class="tarjeta">
+                
+            </div>
+
+            <div class="botones">
+                <a href="home"><button type="submit">Enviar</button></a>
+                <button type="reset" style="cursor: pointer;">Borrar</button>
+            </div>
+
+
+        </form>
+
+        <div class="banner">
+            <img src="/images/category-books-banner_1920x550_210401.jpeg" alt="banner">
+        </div>
+
+    </section>
+
+    <%- include('./partials/footer') %>
+
+</body>
+</html>

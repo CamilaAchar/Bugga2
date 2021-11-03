@@ -1,0 +1,30 @@
+
+<%- include('./partials/head') %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<main>
+    <p>Alta de Producto</p>
+    <form action="/products/create" class="altaProd" method="POST">
+        <label for="name">Título del Libro</label>
+        <input type="text" id="name" name="name" placeholder="Ej: The Lord of the Rings">
+        <label for="autor">Autor</label>
+        <input type="text" id="autor" name="autor" placeholder="Ej: J.R.Tolkien">        <label for="category">Categoría</label>
+        <select name="category" id="category">
+            <option value="">Elegí</option>
+            <option value="ultimos">Últimos Ingresos</option>
+            <option value="best">Best Sellers</option>
+        </select>        
+        <label for="price">Precio</label>
+        <input type="text" id="price" name="price" placeholder="Ej:$150">
+        <label for="Sinopsis">Sinopsis</label>
+        <textarea name="Sinopsis" id="Sinopsis"></textarea>
+        <input type="file" name="image" id="file" class="imagen">
+        <button type="submit" class="buy-now-button">Guardar producto</button>
+    </form>
+
+</main>
+
+
+<%- include('./partials/footer') %>

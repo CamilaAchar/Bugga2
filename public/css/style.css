@@ -1,0 +1,784 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}    
+
+a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+p   {
+    font-size: 12px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(255 255 191);
+}
+
+/*Cabecera - Inicio*/
+
+
+.main-header {
+    margin: 15px;
+
+}
+
+.main-header-logo-search  {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.logo {
+   flex-grow: 5;
+}
+
+.logo img{
+    width: 150px;
+}
+
+.search {
+    flex-grow: 5;
+    position: relative; 
+}
+
+.search input {
+    width: 100%;
+    height: 35px;
+    padding: 10px;
+    border-radius:  5px;
+    border-style: hidden;
+
+}
+
+.search button {
+    position: absolute;
+    padding: 5px;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background-color: white;
+}
+
+.main-header-aviso-burguer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.burger-menu {
+    height: 30px;
+    width: 30px;
+    padding: 7px;
+    color: rgb(75 177 91);
+    border-radius: 3px;
+ }
+
+ .carrito {
+    height: 30px;
+    width: 30px;
+    padding: 7px;
+    color: rgb(75 177 91);
+    border-radius: 3px;
+ }
+
+
+.main-header-verticalMenue {
+    display: none;
+}
+
+.banner {
+    width: auto;
+}
+.banner img {
+    width: 100%;
+}
+/*Cabecera - Fin*/
+
+
+/*main - inicio*/
+section {
+    width: 90%;
+    margin: auto;
+}
+
+section p {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+main {
+    background-color: rgb(255 255 191);
+
+}
+
+main p {
+    font-size: 20px;
+    margin: 15px;
+    text-align: center;
+}
+
+article img {
+    width: 75%;
+    height: 70%;
+    margin-left: 13%;
+    margin-top: 5%;
+    box-shadow: 0px 0px 10px rgb(100 100 100);
+}
+
+
+
+article {
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 0px rgb(100 100 100);
+    transition: box-shadow 1s;
+
+}
+
+article:hover {
+    box-shadow: 0px 0px 10px rgb(100 100 100);
+}
+
+.articulo{
+    padding: 15px;
+    background-color: white;
+    position: relative;
+}
+
+section article h3 {
+    font-size: 14px;
+    
+} 
+
+.autor-favorito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.precio-descuento {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.precio {
+    align-self: flex-start;
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+.autor-favorito i {
+    color: none;
+    transition: 1s background-color;
+}
+
+.autor-favorito i:hover {
+    color: rgb(75 177 91);
+}
+
+.info {
+    margin-left: 15px;
+    color: rgb(75 177 91);
+}
+
+
+article .comprar {
+    font-size: 10px;
+    padding: 5px;
+    margin: 5px auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    transition: 1s background-color;
+
+}
+
+article .comprar:hover {
+    border: none;
+    background-color: rgb(75 177 91);
+    color: white;
+}
+
+
+
+/*main - fin*/
+
+/*detalle Producto - inicio*/
+
+.products-wrapper {
+    margin: 30px auto;
+    text-align: center;
+  }
+ 
+.product-detail {
+    margin: 10px;
+}
+
+.product-detail-description {
+    max-width: 200px;
+    margin: 10px auto;
+    font-size: 15px;
+}
+
+.product-detail img {
+    max-width: 250px;
+    box-shadow: 0 0 10px rgb(100 100 100);
+}
+
+.product-detail-info {
+    margin: 10px auto;
+    text-align: center;
+    line-height: 20px;
+    padding: 10px;
+}
+
+.actions-list {
+    margin-bottom: 10px;
+}
+
+.actions-list i {
+    color: rgb(75 177 91);
+}
+
+/*detalle Producto - fin*/
+
+/*alta producto - incio*/
+
+.altaProd {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 15px;
+    line-height: 30px;
+    width: 90%;
+    margin: 30px auto;
+    padding: 15px;
+}
+
+.altaProd input {
+    border: 1px solid lightslategray;
+    border-radius: 10px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.altaProd select {
+    border: 1px solid lightslategray;
+    border-radius: 10px;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.altaProd textarea {
+    border: 1px solid lightslategray;
+    border-radius: 10px;
+    height: 100px;  
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.altaProd .imagen{
+    border: none;
+}
+.altaProd button {
+    min-width: 50%;
+    height: 30px;
+    margin: 10px auto;
+    color: white;
+    background-color: rgb(75 177 91);
+    border-radius: 5px;
+    border-style: none;
+    transition: background-color 1s;
+}
+.altaProd button:hover{
+    background-color: rgb(75 200 91);
+}
+
+/*alta prodcuto - fin*/
+
+
+/*carrito - inicio*/
+.main-shop {
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;
+    margin: 5px auto;
+}
+
+.main-shop th {
+    font-size: 2vh;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+.detalle-bloque {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+}
+
+.detalleCarrito {
+    text-align: center;
+    margin: 10px auto;
+    border: 0; 
+    border-bottom: 1px solid black; 
+    font-size: 10px;
+}
+
+.detalleCarrito thead tr {
+    background-color: rgb(219, 219, 219);
+    color: rgb(75 177 91);
+}
+
+.detalleCarrito tbody {
+    background-color: white;
+}
+
+.detalleCarrito td img {
+    max-width: 100px;
+    padding: 10px;
+}
+
+.detalleCarrito input{
+    width: 30px;
+    text-align: center;
+    padding: 3px;
+}
+
+.table-foot button {
+    width: 100px;
+    height: 30px;
+    margin: 20px 30px;
+    color: white;
+    background-color: rgb(75 177 91);
+    border-radius: 5px;
+    border-style: none;
+    transition: background-color 1s;
+}
+
+.table-foot button:hover{
+    background-color: rgb(75 200 91);
+}
+.otros {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    line-height: 30px;
+}
+
+.otros input {
+    border-style: none;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 90%;
+}
+
+.otros button {
+    width: 65px;
+    height: 30px;
+    margin: 20px 30px;
+    color: white;
+    background-color: rgb(75 177 91);
+    border-radius: 5px;
+    border-style: none;
+    transition: background-color 1s;
+}
+.otros button:hover{
+    background-color: rgb(75 200 91);
+}
+
+.descuento {
+    border:dashed 1px lightsalmon; 
+}
+
+.envio {
+    margin-top: 17px;
+    border:dashed 1px lightsalmon; 
+}
+
+.envio select {
+    border-style: none;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 90%;
+}
+
+.detalleCompra {
+    margin-left: 10px;
+    border:dashed 1px lightsalmon;
+}
+
+.detalleCompra input{
+    margin-top: 15px;
+    padding-left: 15px;
+    
+}
+
+/*carrito - fin*/
+
+/*Registro - Inicio*/
+
+.formulario-registro {
+    background-color: #ebebeb;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    flex-direction: column;
+    line-height: 30px;
+    width: 100%;
+}
+
+.formulario-registro input {
+    border-style: none;
+    height: 30px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 90%;
+    margin-top: 30px;
+}
+
+.nacimiento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nacimiento label {
+    margin: 10px 20px 0;
+    align-self: flex-start;
+}
+
+.nacimiento input {
+    margin: 0px;
+}
+
+.perfil {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+.perfil h4 {
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.perfil input {
+    margin-top: 0px;
+    height: initial;
+}
+
+.radio {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.intereses {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.intereses h4 {
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.intereses input {
+    margin-top: 0px;
+    height: initial;
+    width: 20%;
+}
+
+.checks {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.foto {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+.foto label {
+    text-align: left;
+    margin-top: 10px;
+}
+
+.foto input {
+    padding: 0px;
+    margin: 5px 0px;
+    height: 30px;
+}
+
+.formulario-registro button{
+    width: 100px;
+    height: 30px;
+    margin: 20px 30px;
+    color: white;
+    background-color: rgb(75 177 91);
+    border-radius: 5px;
+    border-style: none;
+    transition: background-color 1s;
+}
+
+.formulario-registro button:hover {
+    background-color: rgb(75 200 91);
+}
+
+
+.formulario-registro a {
+    color: white;
+}
+/*Registro - fin*/
+
+/*Login - Inicio*/
+
+.login {
+    background-color: #ebebeb;
+    display: flex;
+    flex-direction: column;
+    line-height: 35px;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.login input {
+    width: 80%;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+    padding: 10px;
+}
+
+.login button{
+    width: 80%;
+    height: 30px;
+    margin: 20px 30px;
+    color: white;
+    background-color: rgb(75 177 91);
+    border-radius: 5px;
+    border-style: none;
+    transition: background-color 1s;
+}
+
+.login button:hover {
+    background-color: rgb(75 200 91);
+}
+
+.login a {
+    color: white;
+}
+/*Login - Fin*/
+
+/*Footer - Inicio*/
+footer {
+    background-color: #ebebeb;
+    padding-top: 15px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin: -10px auto;
+}
+
+.datos {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    text-align: center;
+    margin: auto 10px;
+    padding: 15px;
+}
+
+footer i{
+    color: rgb(75 177 91);
+    font-size: 1.3em;
+    margin-top: 13px;
+    min-width: 25px;
+}
+
+footer h3 {
+   margin: 2px;
+   font-size: 16px;
+   color: #666;
+}
+
+footer p {
+   margin: 2px;
+   color: #666;
+   font-size: 12px;
+   margin: 15px 35px ;
+
+}
+
+.central, .seguridad, .mail {
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.credito {
+    display: flex;
+    justify-content: space-around;
+    max-width: 150px;
+    margin: 5px auto;
+}
+
+.credito i {
+    margin: 10px;
+}
+
+.copy {
+    font-size: 12px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/*Footer - Fin*/
+
+/*Inicio - mediaQuery mobile*/
+
+@media (min-width: 361px){
+    .main-header-verticalMenue {
+        display: flex;
+        font-size: 10px;
+        margin: 10px auto;
+    }
+ 
+    .menuIzq {
+        flex-grow: 7;
+   }
+   
+    .menuDch {
+        flex-grow: 3;
+    }
+
+    .menuDch .lista {
+        justify-content: flex-end;
+        margin-right: 15px;
+    }
+    
+    .lista {
+        display: flex;
+    }
+
+    .lista li {
+        margin-left: 15px;
+
+    }
+
+    .lista i{
+        margin-left: 3px;
+    }
+
+    .lista a {
+        color: rgb(75 177 91);
+        font-size: 110%;
+
+    }
+    .burger-menu, .carrito{
+        display: none;
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-bottom: 50px;
+
+    }
+
+
+    article {
+        width: 45%;
+        margin: 15px;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .product-detail-info {
+        width: initial;
+        max-width: 400px;
+
+    }
+
+    .altaProd {
+        max-width: 370px;
+    }
+
+    .login input {
+        width: 50%;
+    }
+
+    .login button{
+        width: 50%;
+    }
+
+    .otros {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+  
+
+
+
+ /*Fin MediaQuery Mobile*/
+
+ /*Inicio MediaQuery Desktop*/
+ @media (min-width: 768px){
+ 
+     .aviso {
+         align-self: flex-end;
+     }
+
+     article {
+         width: 20%;
+     }
+
+     .precio, .descuento {
+         font-size: 14px;
+     }
+
+     main {
+         margin-bottom: 100px;
+     }
+
+     .login input {
+        width: 30%;
+    }
+
+    .login button{
+        width: 30%;
+    }
+
+ /*Fin MediaQuery Desktop*/
