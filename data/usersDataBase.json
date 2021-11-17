@@ -1,0 +1,41 @@
+[
+ {
+  "id": 1,
+  "name": "Lucas Galletti",
+  "user": "lgalletti",
+  "mail": "lucas.galletti@gmail.com",
+  "born": "30/08/1978",
+  "address": "ya tu sabes",
+  "image": "registerImg-1637103327177.jpg",
+  "pass": "holamundo",
+  "pass2": "holamundo"
+ },
+ {
+  "id": 2,
+  "name": "Camila Tombar",
+  "user": "ctombar",
+  "mail": "ctombar@gmail.com",
+  "born": "",
+  "address": "",
+  "ficcion": "ficcion",
+  "aventuras": "aventuras",
+  "investigacion": "investigacion",
+  "universitarios": "universitarios",
+  "pass": "12345678",
+  "pass2": "12345678",
+  "image": "registerImg-1637103437537.jpg"
+ },
+ {
+  "id": 3,
+  "name": "Santiago Sosa",
+  "user": "ssosa",
+  "mail": "ssosa@gmail.com",
+  "born": "1980-11-16",
+  "address": "siempre viva 1234",
+  "ficcion": "ficcion",
+  "aventuras": "aventuras",
+  "pass": "87654321",
+  "pass2": "87654321",
+  "image": "registerImg-1637103507833.jpg"
+ }
+]

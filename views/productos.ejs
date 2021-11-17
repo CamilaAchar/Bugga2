@@ -1,0 +1,38 @@
+<%- include('./partials/head', {title: 'Catálogo'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+    <main>
+
+      <div class="banner">
+
+<%- include('./partials/slider')%>
+
+        <!-- <img src="/images/category-books-banner_1920x550_210401.jpeg" alt="banner"> -->
+      </div>
+
+      <p>Todos los Productos</p>
+
+      <section>
+        <% products.forEach((prod) => { %>
+        <article>
+          <a href="/products/<%=prod.id%>">
+            <img src="/images/<%=prod.image%>" alt="mundo">
+            <div class="articulo">
+              <div class="autor-favorito">
+                <h3><%=prod.name%></h3>
+                <i class="fas fa-heart"></i>
+              </div>
+              <div class="precio-descuento">
+                <p class="precio">$<%=toThousand(prod.price)%>
+                  <a href="/products/<%=prod.id%>"><i class="fas fa-info-circle info"></i></a>
+                </p>
+                <a href="#agregar" class="comprar">Agregar</a>
+              </div>
+            </div>
+          </a>
+          </article>
+        <% }) %>
+      </section>
+<%- include('./partials/footer') %>

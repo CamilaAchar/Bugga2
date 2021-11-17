@@ -1,33 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<%- include('./partials/head') %>
-<body>
+
+<%- include('./partials/head', {title: 'Registro'}) %>
+
     <%- include('./partials/headerNavbar') %>
 
     <section class="formulario-registro">
-       
-        <div class="banner">
-            <img src="/images/category-books-banner_1920x550_210401.jpeg" alt="banner">
-        </div>
 
 
-        <form action="/register.html" method="POST" class="form">
+        <form action="/register" method="POST" class="form" enctype="multipart/form-data">
             <h3>Registro de Usuario</h3>
             <div class="nombre">
-                <input type="text" id="nombre" name="nombre" placeholder="Nombre y Apellido" required minlength="2">
+                <input type="text" id="nombre" name="name" placeholder="Nombre y Apellido" required  minlength="2">
             </div>
             <div class="user">
-                <input type="user" id="user" placeholder="Nombre de Usuario" name="user" required minlength="2">
+                <input type="user" id="user" placeholder="Nombre de Usuario" name="user"  required minlength="2">
             </div>
             <div class="mail-registro">
-                <input type="email" id="mail" placeholder="E-mail" name="mail" required minlength="2">
+                <input type="email" id="mail" placeholder="E-mail" name="mail" required  minlength="2">
             </div>   
             <div class="nacimiento">
                 <label for="nacimiento">Fecha de Nacimiento</label>
-                <input type="date" id="nacimiento" name="nacimiento" required>
+                <input type="date" id="nacimiento" name="born" >
             </div>
             <div class="domicilio">
-                <input type="text" id="domicilio" placeholder="Domicilio" name="domicilio" placeholder="opcional">
+                <input type="text" id="domicilio" placeholder="Domicilio (opcional)" name="address">
             </div>
 
             <div class="intereses">
@@ -56,7 +51,7 @@
 
             <div class="foto">
                 <label for="foto">Foto</label>
-                <input type="file" id="foto" name="foto" accept=".jpg">
+                <input type="file" id="foto" name="registerImg" required>
             </div>
 
             <div class="passR">
@@ -64,25 +59,15 @@
                 <input type="password" id="pass2" name="pass2" required minlength="6" placeholder="Confirmar Contraseña">
             </div>
 
-            <div class="tarjeta">
-                
-            </div>
-
             <div class="botones">
-                <a href="home"><button type="submit">Enviar</button></a>
+                <button action="/" type="submit" style="cursor: pointer;">Registrar</button>
                 <button type="reset" style="cursor: pointer;">Borrar</button>
             </div>
 
 
         </form>
 
-        <div class="banner">
-            <img src="/images/category-books-banner_1920x550_210401.jpeg" alt="banner">
-        </div>
 
     </section>
 
     <%- include('./partials/footer') %>
-
-</body>
-</html>

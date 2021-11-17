@@ -3,7 +3,7 @@ const path = require('path');
 
 const storage = multer.diskStorage({
   destination: (req, file, callback) => {
-    callback(null, 'public/images/products');
+    callback(null, 'public/images/images');
   },
   filename: (req, file, callback) => {
     callback(
@@ -12,10 +12,7 @@ const storage = multer.diskStorage({
     );
   }
 });
-// zapatilla.jpeg
-// zapatilla + '-' + 1234325345 + .jpeg
-// zapatilla-1234325345.jpg
 
-const upload = multer({ storage: storage });
+const uploalBookImg = multer({ storage: storage });
 
-module.exports = upload;
+module.exports = uploalBookImg;

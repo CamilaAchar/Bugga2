@@ -1,4 +1,4 @@
-<%- include('./partials/head') %>
+<%- include('./partials/head', {title: 'Resúmen de Compra'}) %>
 
 
 <%- include('./partials/headerNavbar') %>
@@ -26,22 +26,13 @@
                     <br>
                     <%=products[0].autor%>
                     </td>
-                    <td>$ <%=products[0].price%></td>
+                    <td>$ <%=toThousand(products[0].price)%></td>
                     <td><input type="number" placeholder="1"></td>
-                    <td>$ <%=products[0].price%></td>
+                    <td>$ <%=toThousand(products[0].price)%></td>
                     <td><a href="#borrar"><i class="fas fa-trash-alt" style="color: red; font-size: 15px;"></i></a></td>
                 </tr>
                 
             </tbody>
-            <!-- <tfoot>
-                <tr style="display: flex; justify-content: space-between; margin: 5px auto;">
-                    <td><a href="#"><button>Seguir Comprando</button></a></td>
-                    <td><a href="#"><button>Actualizar</button></a></td>
-                    <td style=""><a href="#"><button>Eliminar Todo</button></a></td>
-                </tr>
-            </tfoot> -->
-
-
         </table>
 
         <div class="table-foot">

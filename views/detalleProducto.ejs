@@ -1,4 +1,4 @@
-<%- include('./partials/head') %>
+<%- include('./partials/head', {title: 'Detalle: ' + products.name}) %>
 
 
 <%- include('./partials/headerNavbar') %>
@@ -14,7 +14,7 @@
     <article class="product-detail-info">
 
       <p class="product-detail-price small">Precio:
-        <span>$<%=products.price%></span>
+        <span>$<%=toThousand(products.price)%></span>
       </p>
       <ul class="actions-list">
         <li>
@@ -26,11 +26,13 @@
           <p>Retiro gratis en locales del vendedor</p>
         </li>
       </ul>
-      <a href="#carrito" class="comprar">COMPRAR</a>
-      <!-- <a href="/products/edit/¿?" class="action-button edit">EDITAR PRODUCTO</a> -->
-      <!-- <form action="/products/delete/¿¿" method="POST" style="display: inline-flex">
-                <button type="submit" class="action-button delete">ELIMINAR</button>
-            </form> -->
+      <a href="/carrito" class="comprar">COMPRAR</a>
+      <br><br>
+      
+      <a href="/products/edit/<%=products.id%>" class="action-button edit"><button class="comprar">EDITAR</button></a>
+      <form action="/products/<%= products.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+        <button type="submit" class="action-button delete comprar">ELIMINAR</button>
+      </form>
     </article>
   </div>
 </div>
