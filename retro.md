@@ -7,13 +7,14 @@ https://miro.com/welcomeonboard/a0g0eWY2RWpQdGJ4a0JPR1AxYzY1cXdvdW1yVGtVa0hMakJB
 Start Doing:
 Diseño integral para cada una de las pantallas
 Unificar tipografías
-Añadir HTML faltantes
-Añadir los css por cada pantalla
+Añadir HTML y CSS faltantes por cada pantalla
+
 
 ---
 
 More Of:
-División y seguimiento de cada tarea
+División de cada tarea
+Seguimiento de cada tarea 
 Reuniones cortas para analizar trabas, dudas  y avances
 
 ---
