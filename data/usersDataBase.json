@@ -4,38 +4,36 @@
   "name": "Lucas Galletti",
   "user": "lgalletti",
   "mail": "lucas.galletti@gmail.com",
-  "born": "30/08/1978",
-  "address": "ya tu sabes",
-  "image": "registerImg-1637103327177.jpg",
-  "pass": "holamundo",
-  "pass2": "holamundo"
+  "born": "1978-08-30",
+  "address": "",
+  "Ciencia Ficción": "Ciencia Ficción",
+  "Investigación": "Investigación",
+  "pass": "$2a$10$EFYcJwKp1dA5r75S5P9Kw.vub8Xmi8GFCCouKxMut.hnqt5pCpQRm",
+  "image": "registerImg-1638657683342.jpg"
  },
  {
   "id": 2,
-  "name": "Camila Tombar",
+  "name": "Cami Tombar",
   "user": "ctombar",
   "mail": "ctombar@gmail.com",
   "born": "",
   "address": "",
-  "ficcion": "ficcion",
-  "aventuras": "aventuras",
-  "investigacion": "investigacion",
-  "universitarios": "universitarios",
-  "pass": "12345678",
-  "pass2": "12345678",
-  "image": "registerImg-1637103437537.jpg"
+  "Investigación": "Investigación",
+  "Universitarios": "Universitarios",
+  "pass": "$2a$10$3weMlTnGi4uujJe87jchLu2d81Dal7ccOYq.lbraP2dUbE7VGTQLa",
+  "image": "registerImg-1638991556422.jpg"
  },
  {
   "id": 3,
-  "name": "Santiago Sosa",
+  "name": "Santi Sosa",
   "user": "ssosa",
   "mail": "ssosa@gmail.com",
-  "born": "1980-11-16",
-  "address": "siempre viva 1234",
-  "ficcion": "ficcion",
-  "aventuras": "aventuras",
-  "pass": "87654321",
-  "pass2": "87654321",
-  "image": "registerImg-1637103507833.jpg"
+  "born": "",
+  "address": "",
+  "Ciencia Ficción": "Ciencia Ficción",
+  "Aventuras": "Aventuras",
+  "Libería": "Libería",
+  "pass": "$2a$10$lbDRViX1/ZrtUrkk/4PJ2eaH0h9NHoD6r6c9dKuKUL91FWLdh8Hy6",
+  "image": "registerImg-1638991582873.jpg"
  }
 ]

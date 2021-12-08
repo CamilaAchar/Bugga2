@@ -450,8 +450,8 @@ article .comprar:hover {
 
 /*Registro - Inicio*/
 
-.formulario-registro {
-    background-image: url(/images/background.jpg);
+.formulario-registro-login {
+    background-image: url(/images/bckimage.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -465,17 +465,29 @@ article .comprar:hover {
 }
 
 .form {
-    margin-top: 20px;
-    color: yellowgreen;
+    margin: 20px 0;
+    padding: 5px;
+    color: white;
+    background-color: rgb(187, 184, 184);
 }
 
-.formulario-registro input {
+.formulario-registro-login input {
     border-style: none;
     height: 30px;
     border-radius: 5px;
     padding: 5px;
     width: 90%;
     margin-top: 30px;
+}
+
+.mje-error {
+    color: red;
+    background-color: ;
+    font-size: 14px; 
+    text-align: right; 
+    width: 90%;
+    margin-top: 5px;
+    margin-bottom: -10px;
 }
 
 .nacimiento {
@@ -518,9 +530,7 @@ article .comprar:hover {
 
 .intereses {
     display: flex;
-    align-items: center;
     flex-direction: column;
-    margin-left: 30px;
 }
 
 .intereses h4 {
@@ -536,9 +546,13 @@ article .comprar:hover {
 
 .checks {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    align-items: center;
     margin-right: 50px;
+}
+
+.intereses-opciones {
+    text-align: left;
 }
 
 .foto {
@@ -557,10 +571,10 @@ article .comprar:hover {
     height: 30px;
 }
 
-.formulario-registro button{
+.formulario-registro-login button{
     width: 100px;
     height: 30px;
-    margin: 20px 30px;
+    margin: 15px 30px;
     color: white;
     background-color: rgb(75 177 91);
     border-radius: 5px;
@@ -568,29 +582,54 @@ article .comprar:hover {
     transition: background-color 1s;
 }
 
-.formulario-registro button:hover {
+.formulario-registro-login button:hover {
     background-color: rgb(75 200 91);
 }
 
 
-.formulario-registro a {
+.formulario-registro-login a {
     color: white;
 }
 /*Registro - fin*/
 
-/*Login - Inicio*/
+/*Profile - Inicio*/
 
-.login {
-    background-image: url(/images/background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
+.profile {
+    display: flex; 
     flex-direction: column;
-    line-height: 35px;
-    justify-content: center;
-    text-align: center;
-    width: 100%;
 }
+
+.profile img {
+    width: 250px; 
+    border-radius: 10px; 
+    margin-bottom: 15px;
+}
+.email{
+    background-color: rgb(75 200 91); 
+    width: 250px; 
+    border-radius: 3px; 
+    padding: 5px;
+    color: white;
+}
+.profile button {
+    margin: 10px 100px; 
+    padding: 5px; 
+    cursor: pointer; 
+    background-color: rgb(75 200 91); 
+    border-style: none; 
+    border-radius: 3px; 
+    color: white;
+}
+.name {
+    width: 250px; 
+    padding: 5px;
+}
+
+
+
+/*Profile - fin*/
+
+/*Login - Inicio*/
 
 .login input {
     width: 80%;
@@ -598,6 +637,19 @@ article .comprar:hover {
     border-radius: 5px;
     height: 25px;
     padding: 10px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75px;
+    margin: 10px auto;
+    font-size: 14px;
+}
+.remember input {
+    width: initial;
+    margin-top: 0px;
 }
 
 .login button{
@@ -805,9 +857,14 @@ footer p {
      .login input {
         width: 30%;
     }
-
+    
     .login button{
         width: 30%;
+    }
+
+    .remember input {
+        width: initial;
+    
     }
 
  /*Fin MediaQuery Desktop*/

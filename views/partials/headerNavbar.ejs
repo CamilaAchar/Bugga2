@@ -36,9 +36,13 @@
 
         <nav class="menuDch">
             <ul class="lista">
-                
-                <li><a href="/register">Registro<i class="far fa-id-card"></i></a></li>
-                <li><a href="/login">Login<i class="fas fa-sign-in-alt"></i></a></li>
+
+                <% if(locals.isLogged){ %> 
+                    <li><a href="/user/profile">Profile<i class="fas fa-user-circle"></i></a></li>    
+                <% } else {%>     
+                <li><a href="/user/register">Registro<i class="far fa-id-card"></i></a></li>
+                <li><a href="/user/login">Login<i class="fas fa-sign-in-alt"></i></a></li>
+                <% } %> 
                 <li><a href="/products/carrito"><i class="fas fa-shopping-cart"></i></a></li>
             </ul>
         </nav>

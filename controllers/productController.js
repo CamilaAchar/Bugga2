@@ -6,6 +6,8 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+const interests = ['Ciencia Ficción', 'Aventuras', 'Romance', 'Investigación', 'Universitarios', 'Libería'];
+
 const productController = {
 
     index: (req,res) => {
@@ -16,7 +18,7 @@ const productController = {
 
     create: (req,res) => {
         
-        res.render('agregarProducto', {products});
+        res.render('agregarProducto', {products, interests});
     },
 
     store: (req,res) => {
@@ -56,7 +58,7 @@ const productController = {
             return prod.id == req.params.id;
             });
 
-       res.render('editarProducto', {editProduct, toThousand});
+       res.render('editarProducto', {editProduct, toThousand, interests});
     },
 
     update: (req,res) => {

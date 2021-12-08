@@ -4,18 +4,33 @@
 <body>
 
     <%- include('./partials/headerNavbar') %>
-    <section class="login">
+    <section class="formulario-registro-login">
 
-        <form action="login.html" method="POST" class="form">
+        <form action="/user/login" method="POST" class="form">
             <h3>Ingreso</h3>
             <div class="user">
-                <input type="text" name="usuario" placeholder="Nombre de Usuario" required minlength="2">
+                <input type="email" id="mail" placeholder="E-mail" name="mail" value="<%= locals.old && old.mail ? old.mail : '' %>">
+                <% if (locals.errors && errors.mail) { %>
+                    <div class="mje-error">
+                        <%= errors.mail.msg %>
+                    </div>
+                <% } %>
             </div>
+            
             <div class="passL">
-                <input type="password" name="pass" placeholder="Contraseña" required minlength="6">
-            </div>    
+                <input type="password" id="pass" name="pass" placeholder="Contraseña" value="<%= locals.old && old.pass ? old.pass : '' %>">
+                    <% if (locals.errors && errors.pass) { %>
+                        <div class="mje-error">
+                            <%= errors.pass.msg %>
+                        </div>
+                    <% } 
+                    %> 
+            </div> 
+            <div class="remember">
+            <input type="checkbox" name="recordar"><label for="recordar">Recordar</label>
+            </div>   
+            <button type="submit" style="cursor: pointer;">Enviar</button>
 
-            <a href="home"><button type="submit">Enviar</button></a>
         </form>
 
 

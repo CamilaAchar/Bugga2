@@ -16,13 +16,13 @@
         <label for="category">Categoría</label>
         <select name="category" id="category" required minlength="2">
             <option value="">Elegí</option>
-            <option value="Ciencia-Ficcion">Ciencia Ficción</option>
-            <option value="Aventuras">Aventuras</option>
-            <option value="Libreria">Librería</option>
+            <% for (interes of interests) { %> 
+            <option value="<%= interes %>"><%= interes %> </option>
+            <% } %> 
         </select>        
         
         <label for="price">Precio</label>
-        <input type="text" id="price" name="price" placeholder="Ej:$150" required minlength="2" value="<%= toThousand(editProduct.price) %>">
+        <input type="text" id="price" name="price" placeholder="Ej: $150" required minlength="2" value="$ <%= toThousand(editProduct.price) %>">
         
         <label for="Sinopsis">Sinopsis</label>
         <textarea name="sinopsis" id="Sinopsis" required minlength="2"><%= editProduct.description %></textarea>

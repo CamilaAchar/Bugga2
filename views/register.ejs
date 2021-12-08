@@ -3,19 +3,33 @@
 
     <%- include('./partials/headerNavbar') %>
 
-    <section class="formulario-registro">
+    <section class="formulario-registro-login">
 
-
-        <form action="/register" method="POST" class="form" enctype="multipart/form-data">
+        <form action="/user/register" method="POST" class="form" enctype="multipart/form-data">
             <h3>Registro de Usuario</h3>
             <div class="nombre">
-                <input type="text" id="nombre" name="name" placeholder="Nombre y Apellido" required  minlength="2">
+                <input type="text" id="nombre" name="name" placeholder="Nombre y Apellido" value="<%= locals.old && old.name ? old.name : '' %>">
+                    <% if (locals.errors && errors.name) { %>
+                        <div class="mje-error">
+                            <%= errors.name.msg %>
+                        </div>
+                    <% } %>
             </div>
             <div class="user">
-                <input type="user" id="user" placeholder="Nombre de Usuario" name="user"  required minlength="2">
+                <input type="user" id="user" placeholder="Nombre de Usuario" name="user" value="<%= locals.old && old.user ? old.user : '' %>">
+                    <% if (locals.errors && errors.user) { %>
+                        <div class="mje-error">
+                            <%= errors.user.msg %>
+                        </div>
+                    <% } %>
             </div>
             <div class="mail-registro">
-                <input type="email" id="mail" placeholder="E-mail" name="mail" required  minlength="2">
+                <input type="email" id="mail" placeholder="E-mail" name="mail" value="<%= locals.old && old.mail ? old.mail : '' %>">
+                    <% if (locals.errors && errors.mail) { %>
+                        <div class="mje-error">
+                            <%= errors.mail.msg %>
+                        </div>
+                    <% } %>
             </div>   
             <div class="nacimiento">
                 <label for="nacimiento">Fecha de Nacimiento</label>
@@ -24,43 +38,35 @@
             <div class="domicilio">
                 <input type="text" id="domicilio" placeholder="Domicilio (opcional)" name="address">
             </div>
-
+            
             <div class="intereses">
                 <h4>Intereses</h4>
                 <div class="checks">
-                    <input type="checkbox" name="ficcion" value="ficcion">
-                    <label for="ficcion">Ciencia Ficción</label>
-                </div>
-                <div class="checks">
-                    <input type="checkbox" name="aventuras" value="aventuras" >
-                    <label for="aventuras">Aventuras</label>
-                </div>
-                <div class="checks">
-                    <input type="checkbox" name="romance" value="romance">
-                    <label for="romance">Romance</label>
-                </div>    
-                <div class="checks">
-                    <input type="checkbox" name="investigacion" value="investigacion">
-                    <label for="investigacion">Investigación</label>
-                </div>    
-                <div class="checks">
-                    <input type="checkbox" name="universitarios" value="universitarios">
-                    <label for="universitarios">Universitarios</label>
+                    <% for (interes of interests) { %>
+                        <div class="intereses-opciones">
+                        <input type="checkbox" name="<%= interes %>" value="<%= interes %>">
+                        <label for="<%= interes %>"><%= interes %></label>
+                        </div> 
+                    <% } %>
                 </div>
             </div>
 
             <div class="foto">
                 <label for="foto">Foto</label>
-                <input type="file" id="foto" name="registerImg" required>
+                <input type="file" id="foto" name="registerImg">
             </div>
 
             <div class="passR">
-                <input type="password" id="pass" name="pass" required minlength="6" placeholder="Contraseña">
-                <input type="password" id="pass2" name="pass2" required minlength="6" placeholder="Confirmar Contraseña">
+                <input type="password" id="pass" name="pass" placeholder="Contraseña" value="<%= locals.old && old.pass ? old.pass : '' %>">
+                    <% if (locals.errors && errors.pass) { %>
+                        <div class="mje-error">
+                            <%= errors.pass.msg %>
+                        </div>
+                    <% } %>
             </div>
 
             <div class="botones">
-                <button action="/" type="submit" style="cursor: pointer;">Registrar</button>
+                <button action="/user/login" type="submit" style="cursor: pointer;">Registrar</button>
                 <button type="reset" style="cursor: pointer;">Borrar</button>
             </div>
 
