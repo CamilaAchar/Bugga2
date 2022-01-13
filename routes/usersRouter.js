@@ -11,7 +11,6 @@ const loggedMiddleware = require('../middleware/loggedMiddleware');
 //Validaciones
 const validateRegister = [
     body('name').notEmpty().withMessage('* Ingresá tu nombre'),
-    body('user').notEmpty().withMessage('* Ingresá tu nombre de usuario').bail().isLength({min:5}).withMessage('El nombre de usuario debe contener como mínimo 5 caracteres'),
     body('mail').notEmpty().withMessage('* Ingresá tu mail').bail().isEmail().withMessage('* Ingresá un e-mail válido'),
     body('pass').notEmpty().withMessage('* Ingresá una contraseña').bail().withMessage('La contraseña debe contener como mínimo 6 caracteres')
 ];
@@ -20,13 +19,27 @@ const validateLogin = [
     body('pass').notEmpty().withMessage('* Ingresá una contraseña')
 ];
 
+
 router.get('/register', guestMiddleware, usersController.register);
 router.post('/register', uploadProfImg.single('registerImg'), validateRegister, usersController.create);
+
+router.get('/admin', usersController.list);
+router.get('/search', usersController.search);
+
 router.get('/profile', loggedMiddleware, usersController.profile);
-router.get('/logout', usersController.destroy);
+router.get('/logout', usersController.destroyCookie);
 
 router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', validateLogin, usersController.processLogin);
+
+router.get('/:id', usersController.detail);
+router.get('/edit/:id', usersController.edit);
+router.put('/:id', uploadProfImg.single('registerImg'), validateRegister, usersController.update);
+
+router.get('/delete/:id', usersController.delete);
+router.delete('/delete/:id', usersController.destroy);
+
+
 
 router.get('/check', function(req,res){
     if (req.session.userLogin == undefined){

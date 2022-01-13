@@ -5,33 +5,45 @@
 <%- include('./partials/headerNavbar') %>
 
 <main>
-    <p>Alta de Producto</p>
+    <p class="editando">Alta de Producto</p>
     <form action="/products" class="altaProd" method="POST" enctype="multipart/form-data">
         
-        <label for="name">Título del Libro</label>
-        <input type="text" id="name" name="name" placeholder="Ej: The Lord of the Rings" required minlength="2">
+        <label for="title">Título del Libro</label>
+        <input type="text" id="title" name="title" placeholder="Ej: The Lord of the Rings" required minlength="2">
         
-        <label for="autor">Autor</label>
-        <input type="text" id="autor" name="autor" placeholder="Ej: J.R.Tolkien" required minlength="2">
+        <label for="author">Autor</label>
+        <select name="author" id="author">
+            <% for (let i = 0; i < autores.length; i++) { %>
+                <option value="<%= autores[i].id %> ">
+                    <%= autores[i].name %> 
+                </option> 
+            <% } %> 
+        </select>
         
         <label for="category">Categoría</label>
-        <select name="category" id="category" required minlength="2">
-            <option value="">Elegí</option>
-            <% for (interes of interests) { %> 
-                <option value="<%= interes %>"><%= interes %> </option>
+        <select name="category" id="category">
+            <% for (let i = 0; i < categorias.length; i++) { %>
+                <option value="<%= categorias[i].id %> ">
+                    <%= categorias[i].name %> 
+                </option> 
             <% } %> 
-        </select>        
-        
+        </select>
         <label for="price">Precio</label>
         <input type="text" id="price" name="price" placeholder="Ej: $150" required minlength="2">
         
         <label for="Sinopsis">Sinopsis</label>
-        <textarea name="sinopsis" id="Sinopsis" required minlength="2"></textarea>
+        <textarea name="description" id="Sinopsis" required minlength="2"></textarea>
+                
+        <label for="date_entry">Fecha de ingreso</label>
+        <input type="date" id="date_entry" name="date_entry" required minlength="2" value="">
         
         <label for="file">Seleccione una imágen</label>
         <input type="file" name="bookImg" id="file" class="imagen">
         
-        <button action="/" type="submit" class="buy-now-button">Guardar producto</button>
+        <div style="display: flex; margin: 12px auto;">
+            <button type="submit" class="buy-now-button">Guardar</button>
+            <a href="/products/admin" class="botonVolver" style="text-decoration: none; color: white;">Cancelar</a>
+        </div>
     </form>
 
 </main>

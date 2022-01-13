@@ -1,0 +1,37 @@
+
+<%- include('./partials/head', {title: 'ABM Usuarios'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<div style="margin-top: 150px;"></div>
+
+<form class="d-flex buscarProducto" action="/user/search" method="GET">
+  <input class="form-control me-2" name="search" type="search" placeholder="Buscar usuario" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Buscar</button>
+</form>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Usuario</th>
+        <th scope="col" class="abmCentrado">Ver</th>
+        <th scope="col" class="abmCentrado">Editar</th>
+        <th scope="col" class="abmCentrado">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody class="abmTable">
+        <% usuarios.forEach((user) => { %>
+      <tr>
+        <td><%= user.id %> </td>
+        <td><%=user.name.toUpperCase()%></td>
+        <td class="abmCentrado"><a href="/user/<%=user.id%>"><i class="far fa-eye"></i></a></td>
+        <td class="abmCentrado"><a href="/user/edit/<%=user.id%>"><i class="fas fa-edit"></i></a></td>
+        <td class="abmCentrado"><a href="/user/delete/<%=user.id%>"><i class="fas fa-trash-alt" style="color: red; font-size: 15px;"></i></a></td>
+      </tr>
+      <% }) %> 
+    </tbody>
+  </table>
+
+  <%- include('./partials/footer') %>

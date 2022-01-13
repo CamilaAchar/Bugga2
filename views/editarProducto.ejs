@@ -1,35 +1,52 @@
 
-<%- include('./partials/head', {title: 'Editando: ' + editProduct.name}) %>
+<%- include('./partials/head', {title: 'Editando: ' + productos.title}) %>
 
 
 <%- include('./partials/headerNavbar') %>
 
 <main>
-    <p>Editar Producto</p>
-    <form action="/products/<%= editProduct.id%>?_method=put" class="altaProd" method="POST" enctype="multipart/form-data">
+    <p class="editando">Editando <%= productos.title %>  </p>
+    <form action="/products/<%= productos.id%>?_method=put" class="altaProd" method="POST" enctype="multipart/form-data">
         <label for="name">Título del Libro</label>
-        <input type="text" id="name" name="name" placeholder="Ej: The Lord of the Rings" required minlength="2" value="<%= editProduct.name %>">
+        <input type="text" id="name" name="title" placeholder="Ej: The Lord of the Rings" required minlength="2" value="<%= productos.title %>">
         
-        <label for="autor">Autor</label>
-        <input type="text" id="autor" name="autor" placeholder="Ej: J.R.Tolkien" required minlength="2" value="<%= editProduct.autor %>">
-        
-        <label for="category">Categoría</label>
-        <select name="category" id="category" required minlength="2">
-            <option value="">Elegí</option>
-            <% for (interes of interests) { %> 
-            <option value="<%= interes %>"><%= interes %> </option>
+        <label for="author">Autor</label>
+        <select name="author" id="autor">
+            <% for (let i = 0; i < autores.length; i++) { %>
+            <% var selectedA = (autores[i].id == productos.id_author) ? 'selected' : '' ;%> 
+                <option value="<%= autores[i].id %>" <%= selectedA %>>
+                    <%= autores[i].name %>
+                </option>
             <% } %> 
-        </select>        
+        </select>
+
+        <label for="category">Categoría</label>
+        <select name="category" id="category">
+            <% for (let i = 0; i < categorias.length; i++) { %>
+            <% var selectedC = (categorias[i].id == productos.id_category) ? 'selected' : '' ;%> 
+                <option value="<%= categorias[i].id %>" <%= selectedC %> >
+                    <%= categorias[i].name %>
+                </option>
+            <% } %> 
+        </select>
         
         <label for="price">Precio</label>
-        <input type="text" id="price" name="price" placeholder="Ej: $150" required minlength="2" value="$ <%= toThousand(editProduct.price) %>">
+        <input type="text" id="price" name="price" placeholder="Ej: $150" required minlength="2" value="<%= toThousand(productos.price) %>">
+        
         
         <label for="Sinopsis">Sinopsis</label>
-        <textarea name="sinopsis" id="Sinopsis" required minlength="2"><%= editProduct.description %></textarea>
+        <textarea name="description" id="Sinopsys" required minlength="2"><%= productos.description %></textarea>
         
+        <label for="date_entry">Fecha de ingreso</label>
+        <input type="date" id="date_entry" name="date_entry" required minlength="2" value="">
+        
+        <input type="hidden" name="oldImage" value="<%= productos.image %> ">
         <input type="file" name="bookImg" id="file" class="imagen">
         
-        <button action="/" type="submit" class="buy-now-button">Guardar producto</button>
+        <div style="display: flex; margin: 12px auto;">
+        <button type="submit" class="buy-now-button">Guardar</button>
+        <a href="/products/admin" class="botonVolver" style="text-decoration: none; color: white;">Cancelar</a>
+        </div>
     </form>
 
 </main>

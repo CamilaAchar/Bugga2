@@ -1,0 +1,48 @@
+
+<%- include('./partials/head', {title: 'ABM Productos'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+
+
+<div class="agregar"  style="margin-top: 150px; margin-left: 100px; ">
+  <p style="color: rgb(75 177 91); font-size: 15px; max-width: 100px; text-align: center; border: solid 3px rgb(75 177 91); border-radius: 10px;">Agregar Producto</p>
+    <a href="/products/create">
+      
+      <img src="/images/addBook.png" alt="" style="max-width: 50px; margin-left: 20px; margin-top: 5px;">
+    </a>
+      
+</div>
+
+<form class="d-flex buscarProducto" action="/products/search" method="GET">
+  <input class="form-control me-2" name="search" type="search" placeholder="Buscar producto" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Buscar</button>
+</form>
+
+<table class="table table-hover">
+    
+    <thead>
+      <tr>
+        <!-- <th scope="col">N°</th> -->
+        <th scope="col" colspan="2">Producto</th>
+        <th scope="col" class="abmCentrado">Ver</th>
+        <th scope="col" class="abmCentrado">Editar</th>
+        <th scope="col" class="abmCentrado">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody class="abmTable">
+        <% productos.forEach((prod) => { %>
+      <tr>
+        <!-- <th scope="row">1</th> -->
+        <td> <img src="/images/<%=prod.image%>" alt="img-book" style="max-width: 50px;"></td>
+        <td><%=prod.title.toUpperCase()%></td>
+        <td class="abmCentrado"><a href="/products/<%=prod.id%>"><i class="far fa-eye"></i></a></td>
+        <td class="abmCentrado"><a href="/products/edit/<%=prod.id%>"><i class="fas fa-edit"></i></a></td>
+        <td class="abmCentrado"><a href="/products/delete/<%=prod.id%>"><i class="fas fa-trash-alt" style="color: red;"></i></a></td>
+      </tr>
+      <% }) %> 
+    </tbody>
+  </table>
+
+  <%- include('./partials/footer') %>

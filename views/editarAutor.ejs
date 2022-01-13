@@ -1,0 +1,22 @@
+<%- include('./partials/head', {title: 'Editando Autor'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<main>
+    <p class="editando">Editando <%= autores.name %> </p>
+    <div class="eliminandoForm">
+        <form action="/authors/<%= autores.id %>?_method=put" class="altaProd" method="POST">
+            <label for="title">Nombre del Autor</label>
+            <input type="text" id="name" name="name" placeholder="Ej: Stephen King" required minlength="2" value="<%= autores.name %> ">
+            <div style="display: flex; margin: 12px auto;">
+                <button type="submit" class="buy-now-button">Guardar</button>
+                <a href="/authors/admin" class="botonVolver" style="text-decoration: none; color: white;">Cancelar</a>
+            </div>
+        </form>
+
+    </div>
+    
+</main>
+
+<%- include('./partials/footer') %>

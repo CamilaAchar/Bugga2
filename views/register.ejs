@@ -15,14 +15,6 @@
                         </div>
                     <% } %>
             </div>
-            <div class="user">
-                <input type="user" id="user" placeholder="Nombre de Usuario" name="user" value="<%= locals.old && old.user ? old.user : '' %>">
-                    <% if (locals.errors && errors.user) { %>
-                        <div class="mje-error">
-                            <%= errors.user.msg %>
-                        </div>
-                    <% } %>
-            </div>
             <div class="mail-registro">
                 <input type="email" id="mail" placeholder="E-mail" name="mail" value="<%= locals.old && old.mail ? old.mail : '' %>">
                     <% if (locals.errors && errors.mail) { %>
@@ -44,7 +36,7 @@
                 <div class="checks">
                     <% for (interes of interests) { %>
                         <div class="intereses-opciones">
-                        <input type="checkbox" name="<%= interes %>" value="<%= interes %>">
+                        <input type="checkbox" name="interest" value="<%= interes %>">
                         <label for="<%= interes %>"><%= interes %></label>
                         </div> 
                     <% } %>
@@ -66,7 +58,7 @@
             </div>
 
             <div class="botones">
-                <button action="/user/login" type="submit" style="cursor: pointer;">Registrar</button>
+                <button type="submit" style="cursor: pointer;">Registrar</button>
                 <button type="reset" style="cursor: pointer;">Borrar</button>
             </div>
 

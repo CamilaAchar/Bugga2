@@ -1,0 +1,19 @@
+<%- include('./partials/head', {title: 'Agregando Categoría'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<main>
+    <p class="editando">Alta de Categoría</p>
+    <form action="/categorys" class="altaProd" method="POST">
+        
+        <label for="title">Nombre de la Categoría</label>
+        <input type="text" id="name" name="name" placeholder="Ej: Infantiles" required minlength="2">
+        <div style="display: flex; margin: 12px auto;">
+            <button type="submit" class="buy-now-button">Guardar</button>
+            <a href="/categorys/admin" class="botonVolver" style="text-decoration: none; color: white;">Cancelar</a>
+        </div>
+    </form>
+</main>
+
+<%- include('./partials/footer') %>

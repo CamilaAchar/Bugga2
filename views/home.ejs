@@ -43,18 +43,18 @@
       <p>¡Los más elegidos en Bugga!</p>
 
       <section>
-        <% masElegidos.forEach((elegidos) => { %>
+        <% elegidos.forEach((elegido) => { %>
         <article>
-          <a href="/products/<%=elegidos.id%>">
-          <img src="/images/<%=elegidos.image%>" alt="mundo">
+          <a href="/products/<%=elegido.id%>">
+          <img src="/images/<%=elegido.image%>" alt="mundo">
           <div class="articulo">
             <div class="autor-favorito">
-              <h3><%=elegidos.name%></h3>
+              <h3><%=elegido.name%></h3>
               <i class="fas fa-heart"></i>
             </div>
             <div class="precio-descuento">
-              <p class="precio">$<%=toThousand(elegidos.price)%>
-                <a href="/products/<%=elegidos.id%>"><i class="fas fa-info-circle info"></i></a>
+              <p class="precio">$<%=toThousand(elegido.price)%>
+                <a href="/products/<%=elegido.id%>"><i class="fas fa-info-circle info"></i></a>
               </p>
               <a href="#agregar" class="comprar">Agregar</a>
             </div>

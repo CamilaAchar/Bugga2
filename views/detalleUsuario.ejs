@@ -1,0 +1,18 @@
+<%- include('./partials/head', {title: 'Detalle del Usuario: ' + user.name}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<div class="products-wrapper">
+  <div class="product-detail">
+    <div>
+      <img src="/images/profileImg/<%=user.image%>" alt="product image" class="product-detail-img">
+      <h2 class="product-detail-description">Nombre: <%=user.name%></h2>
+      <h3 class="product-detail-description">Email: <%=user.email%></h3>
+      <h4 class="product-detail-title">Fecha de Nacimiento: <%=user.born%></h4>
+      <h4 class="product-detail-title">Dirección: <%=user.address%></h4>
+    </div>
+  </div>
+</div>
+
+<%- include('./partials/footer') %>

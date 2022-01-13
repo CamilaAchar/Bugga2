@@ -1,0 +1,21 @@
+<%- include('./partials/head', {title: 'Editando Categoría'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<main>
+    <p class="editando">Editando <%= categorias.name %> </p>
+    <div class="eliminandoForm">
+        <form action="/categorys/<%= categorias.id %>?_method=put " class="altaProd" method="POST" style="border: red solid 1px;">
+            <label for="title">Categoría</label>
+            <input type="text" id="name" name="name" placeholder="Ej: Infantiles" required minlength="2" value="<%= categorias.name %> ">
+            <div style="display: flex; margin: 12px auto;">
+                <button type="submit" class="buy-now-button">Guardar</button>
+                <a href="/authors/admin" class="botonVolver" style="text-decoration: none; color: white;">Cancelar</a>
+            </div>
+        </form>
+                
+    </div>
+</main>
+
+<%- include('./partials/footer') %>

@@ -3,6 +3,8 @@ const app = express();
 const rutasMain = require('./routes/mainRouter');
 const rutasProductos = require('./routes/productsRouter');
 const rutasUsuarios = require('./routes/usersRouter');
+const rutasAutores = require('./routes/authorsRouter');
+const rutasCategorias = require('./routes/categorysRouter');
 const rememberMiddleware = require('./middleware/rememberUser');
 const userNavBarMiddleware = require('./middleware/userNavBarMiddleware');
 const methodOverride =  require('method-override');
@@ -25,6 +27,8 @@ app.set('view engine', 'ejs');
 
 app.use('/', rutasMain);
 app.use('/products', rutasProductos);
+app.use('/authors', rutasAutores);
+app.use('/categorys', rutasCategorias);
 app.use('/user', rutasUsuarios);
 
 app.use((req,res,next)=>{

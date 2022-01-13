@@ -1,0 +1,18 @@
+<%- include('./partials/head', {title: 'Eliminando Usuario'}) %>
+
+<%- include('./partials/headerNavbar') %>
+
+<div class="eliminando">
+    <h4>Confirmación de eliminación del Usuario: </h4>
+
+    <h3> <%= user.name %></h3>
+
+        <div class="eliminandoForm">
+        <form action="/user/delete/<%= user.id %>?_method=delete" method="POST">
+            <button class="botonBorrar" type="submit">Borrar</button>
+        </form>
+        <a href="/user/admin"><button class="botonVolver">Cancelar</button></a>
+        </div>
+</div>
+
+<%- include('./partials/footer') %>

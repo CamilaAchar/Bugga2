@@ -1,0 +1,17 @@
+<%- include('./partials/head', {title: 'Eliminando Categoría'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+<div class="eliminando">
+    <h4>Confirmación de eliminación de la categoría:</h4>
+
+    <h3> <%= categorias.name %></h3>
+
+        <div style="display: flex; justify-content: center;">
+            <form action="/categorys/delete/<%= categorias.id %>?_method=delete" method="POST">
+                <button class="botonBorrar" type="submit">Borrar</button>
+            </form>
+            <a href="/categorys/admin"><button class="botonVolver">Cancelar</button></a>
+        </div>
+</div>
+<%- include('./partials/footer') %>

@@ -1,0 +1,19 @@
+<%- include('./partials/head', {title: 'Eliminando Producto'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<div class="eliminando">
+    <h4>Confirmación de eliminación del Producto: </h4>
+
+    <h3> <%= producto.title %></h3>
+
+        <div style="display: flex; justify-content: center;">
+        <form action="/products/delete/<%= producto.id %>?_method=delete" method="POST">
+            <button class="botonBorrar" type="submit">Borrar</button>
+        </form>
+        <a href="/products/admin"><button class="botonVolver">Cancelar</button></a>
+        </div>
+</div>
+
+<%- include('./partials/footer') %>

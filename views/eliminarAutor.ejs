@@ -1,0 +1,19 @@
+<%- include('./partials/head', {title: 'Eliminando Autor'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<div class="eliminando">
+    <h4>Confirmación de eliminación del Autor: </h4>
+
+    <h3> <%= autores.name %></h3>
+
+        <div class="eliminandoForm">
+        <form action="/authors/delete/<%= autores.id %>?_method=delete" method="POST">
+            <button class="botonBorrar" type="submit">Borrar</button>
+        </form>
+        <a href="/authors/admin"><button class="botonVolver">Cancelar</button></a>
+        </div>
+</div>
+
+<%- include('./partials/footer') %>

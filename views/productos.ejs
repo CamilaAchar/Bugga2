@@ -17,23 +17,26 @@
 
       <section>
 
-        <% products.forEach((prod) => { %>
+        <% productos.forEach((prod) => { %>
         <article>
-          <a href="/products/<%=prod.id%>">
-            <img src="/images/<%=prod.image%>" alt="mundo">
+          <form action="/products/carrito" method="post">
+          <a href="/products/<%=prod.id%>" name="prodID">
+            <img src="/images/<%=prod.image%>" alt="mundo" name="prodImage">
             <div class="articulo">
               <div class="autor-favorito">
-                <h3><%=prod.name%></h3>
+                <h3><%=prod.title%></h3>
                 <i class="fas fa-heart"></i>
               </div>
               <div class="precio-descuento">
-                <p class="precio">$<%=toThousand(prod.price)%>
+                <p class="precio" name="prodPrice">$<%=toThousand(prod.price)%>
                   <a href="/products/<%=prod.id%>"><i class="fas fa-info-circle info"></i></a>
                 </p>
-                <a href="#agregar" class="comprar">Agregar</a>
+                <!-- <a href="#agregar" class="comprar">Agregar</a> -->
+                <button type="submit" class="comprar">Comprar</button>
               </div>
             </div>
           </a>
+         </form>
           </article>
         <% }) %>
       </section>

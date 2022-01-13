@@ -1,0 +1,40 @@
+
+<%- include('./partials/head', {title: 'ABM Categorías'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<div class="agregar"  style="margin-top: 150px; margin-left: 100px; ">
+  <p style="color: rgb(75 177 91); font-size: 15px; max-width: 100px; text-align: center; border: solid 3px rgb(75 177 91); border-radius: 10px;">Agregar Categoría</p>
+    <a href="/categorys/create">
+      
+      <img src="/images/addBook.png" alt="" style="max-width: 50px; margin-left: 20px; margin-top: 5px;">
+    </a>
+      
+</div>
+
+<form class="d-flex buscarProducto" action="/categorys/search">
+  <input class="form-control me-2" name="search" type="search" placeholder="Buscar categoría" aria-label="Search">
+  <button class="btn btn-outline-success" type="submit">Buscar</button>
+</form>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Categoría</th>
+        <th scope="col" class="abmCentrado">Editar</th>
+        <th scope="col" class="abmCentrado">Eliminar</th>
+      </tr>
+    </thead>
+    <tbody class="abmTable">
+        <% categorias.forEach((categoria) => { %>
+      <tr>
+        <td><%=categoria.name.toUpperCase()%></td>
+        <td class="abmCentrado"><a href="/categorys/edit/<%=categoria.id%>"><i class="fas fa-edit"></i></a></td>
+        <td class="abmCentrado"><a href="/categorys/delete/<%=categoria.id%>"><i class="fas fa-trash-alt" style="color: red; font-size: 15px;"></i></a></td>
+      </tr>
+      <% }) %> 
+    </tbody>
+  </table>
+
+  <%- include('./partials/footer') %>

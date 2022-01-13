@@ -1,0 +1,19 @@
+<%- include('./partials/head', {title: 'Agregando Autor'}) %>
+
+
+<%- include('./partials/headerNavbar') %>
+
+<main>
+    <p class="editando">Alta de Autor</p>
+    <form action="/authors" class="altaProd" method="POST">
+        
+        <label for="title">Nombre del Autor</label>
+        <input type="text" id="name" name="name" placeholder="Ej: Stephen King" required minlength="2">
+        <div style="display: flex; margin: 12px auto;">
+            <button type="submit" class="buy-now-button">Guardar</button>
+            <a href="/authors/admin" class="botonVolver" style="text-decoration: none; color: white;">Cancelar</a>
+        </div>
+    </form>
+</main>
+
+<%- include('./partials/footer') %>

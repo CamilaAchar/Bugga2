@@ -3,56 +3,63 @@
 
 <%- include('./partials/headerNavbar') %>
 
-<main class="main-shop">
+<main>
 
-    <h3>Tu pedido</h3>
-    <div class="detalle-bloque">
-        <table class="detalleCarrito" rules="rows"> 
-            <thead>
-                <tr>
-                    <th colspan="2" style="height: 30px;">Producto</th>
-                    <th>Precio Unitario</th>
-                    <th>Cantidad</th>
-                    <th>SubTotal</th>  
-                    <th>Eliminar</th>
-                </tr>
-           </thead>
-           <tbody>
-                
-                <tr>
-                    <td><img src="/images/<%=products[0].image%>" alt="titulo"></td>
-                    <td style="text-align: left;padding-left: 5px; width: 120px; font-size: 13px;"><%=products[0].name%>
-                    <br>
-                    <br>
-                    <%=products[0].autor%>
-                    </td>
-                    <td>$ <%=toThousand(products[0].price)%></td>
-                    <td><input type="number" placeholder="1"></td>
-                    <td>$ <%=toThousand(products[0].price)%></td>
-                    <td><a href="#borrar"><i class="fas fa-trash-alt" style="color: red; font-size: 15px;"></i></a></td>
-                </tr>
-                
-            </tbody>
-        </table>
+    <table class="detalle-compra">
+        <tr style="background-color: limegreen; height: 30px;">
+            <th colspan="3">Detalle</th>
+            <th class="resumen">Precio</th>
+            <th class="resumen">Cantidad</th>
+            <th class="resumen">Subtotal</th>
+            <th class="resumen">Eliminar</th>
+        </tr>
+        
+        <tr style="text-align: center;">
+            <td style="text-align: left;  width: 100px;"><img src="/images/<%=products[0].image%>" alt="book-image" style="max-width: 100px; padding: 5px; margin-left: 5px; text-align: left;"></td>
+            <td style="text-align: left; width: 200px;">
+                <%=products[0].name%>
+                <br>
+                <br>
+                <br>
+                <%=products[0].autor%>
+                <br><br>
+                <span class="detalle"> <%=(products[0].price)%></span>
+            </td>
+            <td class="resumen"></td>
+            <td class="resumen"> <%=(products[0].price)%></td>
+            <td class="resumen"><input type="number" placeholder="1" style="width: 35px; height: 35px;"></td>
+            <td class="resumen"> <%=(products[0].price)%></td>
+            <td class="resumen"><i class="fas fa-trash-alt" style="color: red; font-size: 15px;"></i></td>
+        </tr>
+   
 
-        <div class="table-foot">
-            <a href="#libros"><button>Agregar Otro</button></a>
-            <a href="#actualizar"><button>Actualizar</button></a>
-            <a href="#delete"><button>Eliminar Todo</button></a>
-        </div>
+    </table>
+
+    <div>
+        <form action="" method="post" class="detalle-resumen">
+           
+            <input type="number" placeholder="1" min="1" style="width: 35px; height: 35px; margin-left: 35px; margin-top: 10px; margin-bottom: 10px;">
+
+            <button style="background-color: rgba(128, 128, 128, 0); border: 0px; cursor: pointer; margin-right: 65px; margin-top: 10px;margin-bottom: 10px;"><i class="fas fa-trash-alt" style="color: red; font-size: 15px;"></i></button>
+        </form>
     </div>
-    <div class="otros">
-        <div class="dto-env">
-            <div class="descuento">
-                <label for="">Descuento</label>
-                <br>
-                <input type="text" placeholder="cupón">
-                <br>
-                <a href="#aplicar"><button>Aplicar</button></a>
-            </div>
-            <form action="#envio" class="envio">
-            
-                <label for="pais">Calcular Envío</label>
+
+    <div class="opciones-carrito">
+        <button action="/products/index">Seguir Comprando</button>
+        <button type="reset">Vaciar Carrito</button>
+    </div>
+
+
+    <div class="resto-compra">
+        <form action="" method="post" class="cupon">
+            <p>Descuento</p>
+            <input type="text" placeholder="Cupón">
+            <br>
+            <button>Aplicar</button>
+        </form>
+ 
+        <form action="" method="post" class="envio">
+            <p>Calcular Envío</p>
                 <br>
                 <select name="pais" id="pais">
                     <option value="0">Elija País</option>
@@ -61,24 +68,26 @@
                     <option value="3">Chile</option>
                     <option value="4">Brasil</option>
                 </select>
+                <br>
                 <input type="text" placeholder="Código Postal">
                 <br>
-                <a href="#calcular"><button>Calcular</button></a>
-            
-            </form>
-        </div>
-        <div class="detalleCompra">
-            <label for="">Detalle de Pago</label>
-            <input type="text" placeholder="Subtotal">
-            <input type="text" placeholder="Descuento">
-            <input type="text" placeholder="Envio">
-            <input type="text" placeholder="Total">
-            <br><br>
-            <form action="confirmar" method="post">
-                <button type="submit">Confirmar</button>
-            </form>
+                <button>Calcular</button>
+        </form>
+    
+
+        <div class="total">
+            <h3>Detalle de Compra</h3>
+            <p>Subtotal</p>
+            <p>Descuento</p>
+            <p>Envío</p>
+            <p>Total</p>
+            <button>Confirmar</button>
         </div>
     </div>
+
 </main>
+
+
+
 
 <%- include('./partials/footer') %>
